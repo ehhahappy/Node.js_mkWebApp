@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
+app.locals.pretty = true;
+app.set('view engine', 'pug');
 app.use(express.static('public'));
+app.get('/template', function (req, res){
+    res.render('index', {time:Date()});
+})
 app.get('/', function(req, res){
     res.send('Hello home page');
 });
