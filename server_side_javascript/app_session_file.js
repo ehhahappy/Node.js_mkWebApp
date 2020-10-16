@@ -2,6 +2,9 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var FileStore = require('session-file-store')(session);
+// var sha256 = require('sha256');
+var bkfd2Password = require("pbkdf2-password");
+var hasher = bkfd2Password();
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
@@ -22,7 +25,9 @@ app.get("/count", function(req, res){
 
 app.get('/auth/logout', function(req, res){
     delete req.session.displayName;
-    res.redirect('/welcome')
+    req.session.save(function() {
+        res.redirect('/welcome')
+    });
 })
 app.get('/welcome', function(req, res){
     if(req.session.displayName){
@@ -39,20 +44,33 @@ app.get('/welcome', function(req, res){
 })
 app.post('/auth/login', function(req, res){
     var user = {
-        username:'egoing',
-        password:'111',
-        displayName:'Egoing'
-    };
+            username:'egoing',
+            salt:'BQ9BlOsSwD+kPQQvf6tGIAUplkifOZRR7pnQKRmyJ809YuJjNUtmKlgTNFCqz75TLsYmazUndubnoeqWDQrONg==',
+            password:'M7XbYwYGpTxBMG0VNWItRspZstPI/nj5jYUOguWzpdfEvnO8ojVKvg9rC8+RbozmKioocdMPOx3shz+47rehLzQfPs+KDZKfzekqtNSwrRbWBwLUTmbzT/oLYzgvNjk5lCTQ/t+4P2nnEZ1rExpWBISxhyTXQ3CLaAex4+Sn+wI=',
+            displayName:'Egoing'
+        }
     var uname = req.body.username;
     var pwd = req.body.password;
-    if(uname === user.username && pwd === user.password){
-        req.session.displayName = user.displayName;
-        req.session.save(function() {
-            res.redirect('/welcome');
-        });
-    } else {
-        res.send("Who are you?<a href='/auth/login'>login</a>")
+    if(uname=== user.username){
+        return hasher({password:pwd, salt:user.salt}, function(err, pass,salt, hash){
+            if(hash === user.password){
+                req.session.displayName = user.displayName;
+                req.session.save(function(){
+                    res.redirect('/welcome')
+                })
+            } else{
+                res.send("Who are you?<a href='/auth/login'>login</a>")
+            }
+        })
     }
+    // if(uname === user.username && sha256(pwd+user.salt) === user.password){
+    //     req.session.displayName = user.displayName;
+    //     req.session.save(function() {
+    //         res.redirect('/welcome');
+    //     });
+    // } else {
+    //     res.send("Who are you?<a href='/auth/login'>login</a>")
+    // }
 });
 app.get('/auth/login',function(req, res){
     var output = `
