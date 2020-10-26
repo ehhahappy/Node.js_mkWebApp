@@ -46,7 +46,6 @@ app.get('/welcome', function(req, res){
     }
 })
 app.post('/auth/login', function(req, res) {
-
     var uname = req.body.username;
     var pwd = req.body.password;
     for (var i = 0; i < users.length; i++) {
