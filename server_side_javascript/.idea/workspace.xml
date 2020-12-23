@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6d44cf7-bc23-4aa7-bcb1-1baa69a11b2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_final/new.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views_final/new.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_final/view.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views_final/view.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +50,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ehhah\dev\js\Node.js_mkWebApp\server_side_javascript" />
       <recent name="C:\Users\ehhah\dev\js\server_side_javascript" />
       <recent name="C:\Users\ehhah\dev\js\server_side_javascript\views_final" />
     </key>
@@ -87,6 +85,7 @@
       <workItem from="1601636384865" duration="3294000" />
       <workItem from="1601703091145" duration="7722000" />
       <workItem from="1608541398646" duration="2290000" />
+      <workItem from="1608709454940" duration="1174000" />
     </task>
     <servers />
   </component>
