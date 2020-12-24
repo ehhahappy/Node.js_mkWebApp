@@ -49,8 +49,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ehhah\dev\js\Node.js_mkWebApp\server_side_javascript\view_real_final\auth" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ehhah\dev\js\Node.js_mkWebApp\server_side_javascript" />
+      <recent name="C:\Users\ehhah\dev\js\Node.js_mkWebApp\server_side_javascript\real_final_views\topic" />
       <recent name="C:\Users\ehhah\dev\js\server_side_javascript" />
       <recent name="C:\Users\ehhah\dev\js\server_side_javascript\views_final" />
     </key>
@@ -85,7 +89,8 @@
       <workItem from="1601636384865" duration="3294000" />
       <workItem from="1601703091145" duration="7722000" />
       <workItem from="1608541398646" duration="2290000" />
-      <workItem from="1608709454940" duration="4682000" />
+      <workItem from="1608709454940" duration="5279000" />
+      <workItem from="1608798436388" duration="11376000" />
     </task>
     <servers />
   </component>
